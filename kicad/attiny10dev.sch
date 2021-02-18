@@ -1,0 +1,631 @@
+EESchema Schematic File Version 4
+EELAYER 30 0
+EELAYER END
+$Descr A4 11693 8268
+encoding utf-8
+Sheet 1 1
+Title ""
+Date ""
+Rev ""
+Comp ""
+Comment1 ""
+Comment2 ""
+Comment3 ""
+Comment4 ""
+$EndDescr
+Text Label 4650 4750 2    50   ~ 0
+tpiclk
+Text Label 4650 4350 2    50   ~ 0
+tpidata
+Text Label 5250 4450 0    50   ~ 0
+pb0
+Text Label 5250 4850 0    50   ~ 0
+pb1
+Text Label 4650 4950 2    50   ~ 0
+io1
+Text Label 4650 4550 2    50   ~ 0
+io0
+$Comp
+L random_things:m4-12h K1
+U 1 1 5F40FC98
+P 4950 4850
+F 0 "K1" V 4183 4850 50  0000 C CNN
+F 1 "m4-12h" V 4274 4850 50  0000 C CNN
+F 2 "random_stuff:m4-12h" H 5500 4900 50  0001 C CNN
+F 3 "http://www.azettler.com/pdfs/az850.pdf" H 4950 4850 50  0001 C CNN
+	1    4950 4850
+	0    -1   -1   0   
+$EndComp
+Text Label 5250 3250 0    50   ~ 0
+pb3
+Text Label 4650 3350 2    50   ~ 0
+io3
+$Comp
+L Transistor_BJT:2N2219 Q4
+U 1 1 5F4161CE
+P 4900 2100
+F 0 "Q4" H 5091 2146 50  0000 L CNN
+F 1 "FZT600" H 5091 2055 50  0000 L CNN
+F 2 "Package_TO_SOT_THT:TO-92" H 5100 2025 50  0001 L CIN
+F 3 "http://www.onsemi.com/pub_link/Collateral/2N2219-D.PDF" H 4900 2100 50  0001 L CNN
+	1    4900 2100
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R2
+U 1 1 5F427166
+P 4550 2100
+F 0 "R2" V 4343 2100 50  0000 C CNN
+F 1 "10k" V 4434 2100 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 4480 2100 50  0001 C CNN
+F 3 "~" H 4550 2100 50  0001 C CNN
+	1    4550 2100
+	0    1    1    0   
+$EndComp
+$Comp
+L Device:D D1
+U 1 1 5F427996
+P 5000 1600
+F 0 "D1" V 4954 1679 50  0000 L CNN
+F 1 "D" V 5045 1679 50  0000 L CNN
+F 2 "Diode_THT:D_DO-41_SOD81_P10.16mm_Horizontal" H 5000 1600 50  0001 C CNN
+F 3 "~" H 5000 1600 50  0001 C CNN
+	1    5000 1600
+	0    1    1    0   
+$EndComp
+Text Label 4400 2100 2    50   ~ 0
+prog
+$Comp
+L power:GND #PWR022
+U 1 1 5F428D07
+P 5000 2300
+F 0 "#PWR022" H 5000 2050 50  0001 C CNN
+F 1 "GND" H 5005 2127 50  0000 C CNN
+F 2 "" H 5000 2300 50  0001 C CNN
+F 3 "" H 5000 2300 50  0001 C CNN
+	1    5000 2300
+	1    0    0    -1  
+$EndComp
+Text Label 9100 3850 2    50   ~ 0
+io0
+Text Label 9600 3850 0    50   ~ 0
+io0
+Text Label 9100 3950 2    50   ~ 0
+io1
+Text Label 9600 3950 0    50   ~ 0
+io1
+Text Label 9600 4050 0    50   ~ 0
+io2
+Text Label 9100 4050 2    50   ~ 0
+io2
+Text Label 9600 4150 0    50   ~ 0
+io3
+Text Label 9100 4150 2    50   ~ 0
+io3
+Text Label 950  2700 2    50   ~ 0
+tpidata
+Text Label 950  2800 2    50   ~ 0
+tpiclk
+$Comp
+L power:GND #PWR05
+U 1 1 5F446CEA
+P 950 3200
+F 0 "#PWR05" H 950 2950 50  0001 C CNN
+F 1 "GND" V 955 3072 50  0000 R CNN
+F 2 "" H 950 3200 50  0001 C CNN
+F 3 "" H 950 3200 50  0001 C CNN
+	1    950  3200
+	0    1    1    0   
+$EndComp
+Text Label 950  2900 2    50   ~ 0
+prog
+$Comp
+L Connector_Generic:Conn_02x06_Odd_Even J1
+U 1 1 5F503F11
+P 9300 4050
+F 0 "J1" H 9350 4467 50  0000 C CNN
+F 1 "Conn_02x06_Odd_Even" H 9350 4376 50  0000 C CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_2x06_P2.54mm_Vertical" H 9300 4050 50  0001 C CNN
+F 3 "~" H 9300 4050 50  0001 C CNN
+	1    9300 4050
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR03
+U 1 1 5F50651E
+P 9100 4250
+F 0 "#PWR03" H 9100 4100 50  0001 C CNN
+F 1 "+5V" V 9115 4378 50  0000 L CNN
+F 2 "" H 9100 4250 50  0001 C CNN
+F 3 "" H 9100 4250 50  0001 C CNN
+	1    9100 4250
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:+5V #PWR06
+U 1 1 5F506CB2
+P 9600 4250
+F 0 "#PWR06" H 9600 4100 50  0001 C CNN
+F 1 "+5V" V 9615 4378 50  0000 L CNN
+F 2 "" H 9600 4250 50  0001 C CNN
+F 3 "" H 9600 4250 50  0001 C CNN
+	1    9600 4250
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR07
+U 1 1 5F507703
+P 9600 4350
+F 0 "#PWR07" H 9600 4100 50  0001 C CNN
+F 1 "GND" H 9605 4177 50  0000 C CNN
+F 2 "" H 9600 4350 50  0001 C CNN
+F 3 "" H 9600 4350 50  0001 C CNN
+	1    9600 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR04
+U 1 1 5F507C6C
+P 9100 4350
+F 0 "#PWR04" H 9100 4100 50  0001 C CNN
+F 1 "GND" H 9105 4177 50  0000 C CNN
+F 2 "" H 9100 4350 50  0001 C CNN
+F 3 "" H 9100 4350 50  0001 C CNN
+	1    9100 4350
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR024
+U 1 1 5F519329
+P 1200 4100
+F 0 "#PWR024" H 1200 3850 50  0001 C CNN
+F 1 "GND" V 1205 3972 50  0000 R CNN
+F 2 "" H 1200 4100 50  0001 C CNN
+F 3 "" H 1200 4100 50  0001 C CNN
+	1    1200 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR020
+U 1 1 5F51BF90
+P 4650 3650
+F 0 "#PWR020" H 4650 3500 50  0001 C CNN
+F 1 "+12V" H 4665 3823 50  0000 C CNN
+F 2 "" H 4650 3650 50  0001 C CNN
+F 3 "" H 4650 3650 50  0001 C CNN
+	1    4650 3650
+	0    -1   -1   0   
+$EndComp
+$Comp
+L power:GND #PWR02
+U 1 1 5F522E92
+P 6850 3750
+F 0 "#PWR02" H 6850 3500 50  0001 C CNN
+F 1 "GND" H 6855 3577 50  0000 C CNN
+F 2 "" H 6850 3750 50  0001 C CNN
+F 3 "" H 6850 3750 50  0001 C CNN
+	1    6850 3750
+	1    0    0    -1  
+$EndComp
+Text Label 5000 1900 0    50   ~ 0
+lower_relay
+$Comp
+L power:+12V #PWR021
+U 1 1 5F561F7D
+P 5000 1450
+F 0 "#PWR021" H 5000 1300 50  0001 C CNN
+F 1 "+12V" H 5015 1623 50  0000 C CNN
+F 2 "" H 5000 1450 50  0001 C CNN
+F 3 "" H 5000 1450 50  0001 C CNN
+	1    5000 1450
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR013
+U 1 1 5F563AA5
+P 5250 5250
+F 0 "#PWR013" H 5250 5100 50  0001 C CNN
+F 1 "+12V" H 5265 5423 50  0000 C CNN
+F 2 "" H 5250 5250 50  0001 C CNN
+F 3 "" H 5250 5250 50  0001 C CNN
+	1    5250 5250
+	0    1    1    0   
+$EndComp
+Text Label 5250 3650 0    50   ~ 0
+lower_relay
+Text Label 4650 5250 2    50   ~ 0
+lower_relay
+$Comp
+L random_things:m4-12h K2
+U 1 1 5F422885
+P 4950 3250
+F 0 "K2" V 4183 3250 50  0000 C CNN
+F 1 "m4-12h" V 4274 3250 50  0000 C CNN
+F 2 "random_stuff:m4-12h" H 5500 3300 50  0001 C CNN
+F 3 "http://www.azettler.com/pdfs/az850.pdf" H 4950 3250 50  0001 C CNN
+	1    4950 3250
+	0    -1   -1   0   
+$EndComp
+Text Label 2150 3400 2    50   ~ 0
+hard_reset
+Text Label 950  3000 2    50   ~ 0
+hard_reset
+$Comp
+L Connector:Conn_01x03_Male J3
+U 1 1 5F823268
+P 850 4900
+F 0 "J3" H 958 5181 50  0000 C CNN
+F 1 "Conn_01x03_Male" H 958 5090 50  0000 C CNN
+F 2 "TerminalBlock_RND:TerminalBlock_RND_205-00277_1x03_P5.00mm_Vertical" H 850 4900 50  0001 C CNN
+F 3 "~" H 850 4900 50  0001 C CNN
+	1    850  4900
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR08
+U 1 1 5F82432F
+P 1050 5000
+F 0 "#PWR08" H 1050 4850 50  0001 C CNN
+F 1 "+5V" V 1065 5128 50  0000 L CNN
+F 2 "" H 1050 5000 50  0001 C CNN
+F 3 "" H 1050 5000 50  0001 C CNN
+	1    1050 5000
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+12V #PWR010
+U 1 1 5F824D20
+P 1050 4800
+F 0 "#PWR010" H 1050 4650 50  0001 C CNN
+F 1 "+12V" V 1065 4928 50  0000 L CNN
+F 2 "" H 1050 4800 50  0001 C CNN
+F 3 "" H 1050 4800 50  0001 C CNN
+	1    1050 4800
+	0    1    1    0   
+$EndComp
+$Comp
+L power:GND #PWR09
+U 1 1 5F825482
+P 1050 4900
+F 0 "#PWR09" H 1050 4650 50  0001 C CNN
+F 1 "GND" V 1055 4772 50  0000 R CNN
+F 2 "" H 1050 4900 50  0001 C CNN
+F 3 "" H 1050 4900 50  0001 C CNN
+	1    1050 4900
+	0    -1   -1   0   
+$EndComp
+$Comp
+L Device:C C3
+U 1 1 5F84B6F5
+P 800 3950
+F 0 "C3" V 548 3950 50  0000 C CNN
+F 1 "22u" V 639 3950 50  0000 C CNN
+F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 838 3800 50  0001 C CNN
+F 3 "~" H 800 3950 50  0001 C CNN
+	1    800  3950
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:GND #PWR026
+U 1 1 5F84B6FB
+P 800 4100
+F 0 "#PWR026" H 800 3850 50  0001 C CNN
+F 1 "GND" V 805 3972 50  0000 R CNN
+F 2 "" H 800 4100 50  0001 C CNN
+F 3 "" H 800 4100 50  0001 C CNN
+	1    800  4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR025
+U 1 1 5F84B849
+P 800 3800
+F 0 "#PWR025" H 800 3650 50  0001 C CNN
+F 1 "+12V" V 815 3928 50  0000 L CNN
+F 2 "" H 800 3800 50  0001 C CNN
+F 3 "" H 800 3800 50  0001 C CNN
+	1    800  3800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector_Generic:Conn_01x06 J2
+U 1 1 5FE8AA95
+P 1150 2900
+F 0 "J2" H 1230 2892 50  0000 L CNN
+F 1 "Conn_01x06" H 1230 2801 50  0000 L CNN
+F 2 "Connector_PinHeader_2.54mm:PinHeader_1x06_P2.54mm_Vertical" H 1150 2900 50  0001 C CNN
+F 3 "~" H 1150 2900 50  0001 C CNN
+	1    1150 2900
+	1    0    0    -1  
+$EndComp
+Text Label 950  3100 2    50   ~ 0
+reset_low
+NoConn ~ 5250 2850
+NoConn ~ 4650 2750
+NoConn ~ 4650 2950
+$Comp
+L Device:C C2
+U 1 1 5F519323
+P 1200 3950
+F 0 "C2" V 948 3950 50  0000 C CNN
+F 1 "22u" V 1039 3950 50  0000 C CNN
+F 2 "Capacitor_THT:CP_Radial_D12.5mm_P5.00mm" H 1238 3800 50  0001 C CNN
+F 3 "~" H 1200 3950 50  0001 C CNN
+	1    1200 3950
+	-1   0    0    1   
+$EndComp
+$Comp
+L power:+5V #PWR023
+U 1 1 5F51931D
+P 1200 3800
+F 0 "#PWR023" H 1200 3650 50  0001 C CNN
+F 1 "+5V" V 1215 3928 50  0000 L CNN
+F 2 "" H 1200 3800 50  0001 C CNN
+F 3 "" H 1200 3800 50  0001 C CNN
+	1    1200 3800
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	5000 1750 5000 1900
+Text Label 7450 5100 0    50   ~ 0
+pb3
+Text Label 7450 5000 0    50   ~ 0
+io2
+Text Label 7450 4900 0    50   ~ 0
+pb1
+$Comp
+L power:GND #PWR012
+U 1 1 5F3FF827
+P 6850 5700
+F 0 "#PWR012" H 6850 5450 50  0001 C CNN
+F 1 "GND" H 6855 5527 50  0000 C CNN
+F 2 "" H 6850 5700 50  0001 C CNN
+F 3 "" H 6850 5700 50  0001 C CNN
+	1    6850 5700
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR011
+U 1 1 5F3FEC77
+P 6850 4500
+F 0 "#PWR011" H 6850 4350 50  0001 C CNN
+F 1 "+5V" H 6865 4673 50  0000 C CNN
+F 2 "" H 6850 4500 50  0001 C CNN
+F 3 "" H 6850 4500 50  0001 C CNN
+	1    6850 4500
+	1    0    0    -1  
+$EndComp
+Text Label 7450 4800 0    50   ~ 0
+pb0
+$Comp
+L MCU_Microchip_ATtiny:ATtiny10-TS U2
+U 1 1 5F3FE7D1
+P 6850 5100
+F 0 "U2" H 6320 5146 50  0000 R CNN
+F 1 "ATtiny10-TS" H 6320 5055 50  0000 R CNN
+F 2 "Package_DIP:DIP-6_W7.62mm" H 6850 5100 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8127-AVR-8-bit-Microcontroller-ATtiny4-ATtiny5-ATtiny9-ATtiny10_Datasheet.pdf" H 6850 5100 50  0001 C CNN
+	1    6850 5100
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:GND #PWR017
+U 1 1 5F4426B5
+P 7150 4250
+F 0 "#PWR017" H 7150 4000 50  0001 C CNN
+F 1 "GND" H 7155 4077 50  0000 C CNN
+F 2 "" H 7150 4250 50  0001 C CNN
+F 3 "" H 7150 4250 50  0001 C CNN
+	1    7150 4250
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+5V #PWR016
+U 1 1 5F441FA1
+P 7150 3950
+F 0 "#PWR016" H 7150 3800 50  0001 C CNN
+F 1 "+5V" H 7165 4123 50  0000 C CNN
+F 2 "" H 7150 3950 50  0001 C CNN
+F 3 "" H 7150 3950 50  0001 C CNN
+	1    7150 3950
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:C C1
+U 1 1 5F4409C5
+P 7150 4100
+F 0 "C1" H 7265 4146 50  0000 L CNN
+F 1 "100n" H 7265 4055 50  0000 L CNN
+F 2 "Capacitor_SMD:C_0805_2012Metric_Pad1.15x1.40mm_HandSolder" H 7188 3950 50  0001 C CNN
+F 3 "~" H 7150 4100 50  0001 C CNN
+	1    7150 4100
+	1    0    0    -1  
+$EndComp
+$Comp
+L MCU_Microchip_ATtiny:ATtiny10-TS U1
+U 1 1 5F522E86
+P 6850 3150
+F 0 "U1" H 6320 3196 50  0000 R CNN
+F 1 "ATtiny10-TS" H 6320 3105 50  0000 R CNN
+F 2 "Package_TO_SOT_SMD:SOT-23-6_Handsoldering" H 6850 3150 50  0001 C CIN
+F 3 "http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-8127-AVR-8-bit-Microcontroller-ATtiny4-ATtiny5-ATtiny9-ATtiny10_Datasheet.pdf" H 6850 3150 50  0001 C CNN
+	1    6850 3150
+	1    0    0    -1  
+$EndComp
+Text Label 7450 3150 0    50   ~ 0
+pb3
+Text Label 7450 3050 0    50   ~ 0
+io2
+Text Label 7450 2950 0    50   ~ 0
+pb1
+Text Label 7450 2850 0    50   ~ 0
+pb0
+$Comp
+L power:+5V #PWR01
+U 1 1 5F522E8C
+P 6850 2550
+F 0 "#PWR01" H 6850 2400 50  0001 C CNN
+F 1 "+5V" H 6865 2723 50  0000 C CNN
+F 2 "" H 6850 2550 50  0001 C CNN
+F 3 "" H 6850 2550 50  0001 C CNN
+	1    6850 2550
+	1    0    0    -1  
+$EndComp
+Text Label 3650 4100 2    50   ~ 0
+reset_low
+Wire Wire Line
+	3000 3150 3500 3150
+$Comp
+L Device:R R3
+U 1 1 5FE8674A
+P 3650 3150
+F 0 "R3" V 3443 3150 50  0000 C CNN
+F 1 "10k" V 3534 3150 50  0000 C CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 3580 3150 50  0001 C CNN
+F 3 "~" H 3650 3150 50  0001 C CNN
+	1    3650 3150
+	0    1    1    0   
+$EndComp
+Wire Wire Line
+	3950 4300 3950 4400
+$Comp
+L power:GND #PWR0102
+U 1 1 5FE847FD
+P 3950 4400
+F 0 "#PWR0102" H 3950 4150 50  0001 C CNN
+F 1 "GND" H 3955 4227 50  0000 C CNN
+F 2 "" H 3950 4400 50  0001 C CNN
+F 3 "" H 3950 4400 50  0001 C CNN
+	1    3950 4400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 3650 3000 3600
+Wire Wire Line
+	3450 3650 3000 3650
+Wire Wire Line
+	3450 3600 3450 3650
+$Comp
+L power:+5V #PWR0101
+U 1 1 5FE7E52A
+P 3450 3600
+F 0 "#PWR0101" H 3450 3450 50  0001 C CNN
+F 1 "+5V" H 3465 3773 50  0000 C CNN
+F 2 "" H 3450 3600 50  0001 C CNN
+F 3 "" H 3450 3600 50  0001 C CNN
+	1    3450 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 3150 3000 3200
+Connection ~ 3000 3150
+Connection ~ 2450 3150
+Wire Wire Line
+	2450 2950 2450 3150
+$Comp
+L Transistor_FET:BSS84 Q2
+U 1 1 5F5E2DFB
+P 2900 2850
+F 0 "Q2" H 3104 2804 50  0000 L CNN
+F 1 "BSS84" H 3104 2895 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3100 2775 50  0001 L CIN
+F 3 "http://assets.nexperia.com/documents/data-sheet/BSS84.pdf" H 2900 2850 50  0001 L CNN
+	1    2900 2850
+	1    0    0    1   
+$EndComp
+$Comp
+L Transistor_FET:2N7002 Q3
+U 1 1 5F5E467F
+P 2900 3400
+F 0 "Q3" H 3104 3446 50  0000 L CNN
+F 1 "2N7002" H 3104 3355 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 3100 3325 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 2900 3400 50  0001 L CNN
+	1    2900 3400
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3000 3050 3000 3150
+$Comp
+L power:+12V #PWR018
+U 1 1 5F5E8332
+P 3000 2650
+F 0 "#PWR018" H 3000 2500 50  0001 C CNN
+F 1 "+12V" H 3015 2823 50  0000 C CNN
+F 2 "" H 3000 2650 50  0001 C CNN
+F 3 "" H 3000 2650 50  0001 C CNN
+	1    3000 2650
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2700 2850 2700 3150
+Wire Wire Line
+	2450 3150 2700 3150
+Connection ~ 2700 3150
+Wire Wire Line
+	2700 3150 2700 3400
+$Comp
+L power:GND #PWR015
+U 1 1 5F5F1028
+P 2450 3600
+F 0 "#PWR015" H 2450 3350 50  0001 C CNN
+F 1 "GND" H 2455 3427 50  0000 C CNN
+F 2 "" H 2450 3600 50  0001 C CNN
+F 3 "" H 2450 3600 50  0001 C CNN
+	1    2450 3600
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	2450 3150 2450 3200
+$Comp
+L Transistor_FET:2N7002 Q1
+U 1 1 5F5EB596
+P 2350 3400
+F 0 "Q1" H 2554 3446 50  0000 L CNN
+F 1 "2N7002" H 2554 3355 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 2550 3325 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 2350 3400 50  0001 L CNN
+	1    2350 3400
+	1    0    0    -1  
+$EndComp
+$Comp
+L power:+12V #PWR014
+U 1 1 5F5EB2C9
+P 2450 2650
+F 0 "#PWR014" H 2450 2500 50  0001 C CNN
+F 1 "+12V" H 2465 2823 50  0000 C CNN
+F 2 "" H 2450 2650 50  0001 C CNN
+F 3 "" H 2450 2650 50  0001 C CNN
+	1    2450 2650
+	1    0    0    -1  
+$EndComp
+$Comp
+L Device:R R1
+U 1 1 5F5EA407
+P 2450 2800
+F 0 "R1" H 2520 2846 50  0000 L CNN
+F 1 "10k" H 2520 2755 50  0000 L CNN
+F 2 "Resistor_SMD:R_0805_2012Metric_Pad1.15x1.40mm_HandSolder" V 2380 2800 50  0001 C CNN
+F 3 "~" H 2450 2800 50  0001 C CNN
+	1    2450 2800
+	1    0    0    -1  
+$EndComp
+$Comp
+L Transistor_FET:2N7002 Q5
+U 1 1 5FE808C9
+P 3850 4100
+F 0 "Q5" H 4054 4146 50  0000 L CNN
+F 1 "2N7002" H 4054 4055 50  0000 L CNN
+F 2 "Package_TO_SOT_SMD:SOT-23" H 4050 4025 50  0001 L CIN
+F 3 "https://www.fairchildsemi.com/datasheets/2N/2N7002.pdf" H 3850 4100 50  0001 L CNN
+	1    3850 4100
+	1    0    0    -1  
+$EndComp
+Wire Wire Line
+	3950 3150 3950 3900
+Wire Wire Line
+	3800 3150 3950 3150
+Connection ~ 3950 3150
+Wire Wire Line
+	3950 3150 4650 3150
+$EndSCHEMATC
