@@ -1,5 +1,6 @@
 import serial
 from time import sleep
+import argparse
 
 def get_data(path):
     with open(path) as f:
@@ -18,12 +19,17 @@ def send(sp, msg):
             print(back, c)
     
 def main():
-    sp = serial.Serial('COM4', 115200, timeout=.5)
+    parser = argparse.ArgumentParser(description="Upload code to an ATTiny10")
+    parser.add_argument("--port", help="COM port to upload to", required=True)
+    parser.add_argument("--file", help=".hex file to upload", required=True)
+    args = parser.parse_args()
+    
+    sp = serial.Serial(args.port, 115200, timeout=.5)
     sleep(3) #wait for arduino to reset
     
     sp.read(10)
     send(sp, "S")
-    data = get_data("C:\\Users\\Anton\\Documents\\Atmel Studio\\7.0\\attiny10blink\\attiny10blink\\Debug\\attiny10blink.hex")
+    data = get_data(args.file)
     send(sp, data)
     send(sp, "R")
     mem = sp.read(1024*2).decode()
