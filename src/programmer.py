@@ -35,7 +35,8 @@ def main():
     mem = sp.read(1024*2).decode()
     
     # check that we wrote what we wanted to write
-    assert mem == data + "F" * (len(mem) - len(data)), "It failed"
+    expected = data + "F" * (len(mem) - len(data))
+    assert mem == expected, f"It failed\n{mem}\n{expected}"
     
     # diable programming interface
     send(sp, "X")
