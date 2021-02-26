@@ -97,7 +97,6 @@ void set_no_extra_get_stuff() {
   }
 }
 
-
 unsigned char serial_in_addr_to_op_code(unsigned char opcode, unsigned char addr) {
   return (opcode | ((addr & 0b110000) << 1)) | (addr & 0b1111);
 }
@@ -131,6 +130,17 @@ unsigned char data_write(char inc, unsigned char data) {
   tpi_send(data);
 }
 
+void set_rstdisbl(char val) {
+  write_io(0x33, 0x14); // should erase next section we write to
+  pointer_load(0x3F41);
+  data_write(0, 0);
+  wait_nvm_ready();
+  if (val) {
+    pointer_load(0x3F40);
+    data_write(0, 1); 
+  }
+}
+
 volatile void wait_nvm_ready() {
   unsigned char res = 1;
   while (res) {
@@ -154,13 +164,6 @@ void write_flash(unsigned char lower, unsigned char upper) {
   wait_nvm_ready();
 }
 
-
-unsigned char data[] = {
-  0x0A,0xC0,0x11,0xC0,0x10,0xC0,0x0F,0xC0,0x0E,0xC0,0x0D,0xC0,0x0C,0xC0,0x0B,0xC0,
-  0x0A,0xC0,0x09,0xC0,0x08,0xC0,0x11,0x27,0x1F,0xBF,0xCF,0xE5,0xD0,0xE0,0xDE,0xBF,
-  0xCD,0xBF,0x02,0xD0,0x07,0xC0,0xEC,0xCF,0x41,0xE0,0x41,0xB9,0x13,0xB9,0x42,0xB9,
-  0x12,0xB9,0xFD,0xCF,0xF8,0x94,0xFF,0xCF
-};
 
 void start() {
   digitalWrite(TPI_DATA_PIN, 0);
@@ -197,7 +200,7 @@ void setup() {
 }
 
 unsigned char buf[4];
-int i = 0; 
+int i = 0;
 
 unsigned char to_char(unsigned char c) {
   if (c <= '9') {
@@ -218,6 +221,10 @@ void loop() {
     if (com == 'S') {
       start();
       i = 0;
+    } else if (com == 'V') {
+      set_rstdisbl(1);
+    } else if (com == 'v') {
+      set_rstdisbl(0);
     } else if (com == 'X') {
       finish();
     } else if (com == 'R') {
