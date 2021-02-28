@@ -15,10 +15,8 @@
 
 const unsigned char NVM_KEY[] = {0x12, 0x89, 0xAB, 0x45, 0xCD, 0xD8, 0x88, 0xFF};
 
-void tpi_enable() {
-  digitalWrite(PROG_PIN, 1);
-  delay(100);
-  digitalWrite(RST_PIN, 0);
+void tpi_try_enable(char reset) {
+  digitalWrite(RST_PIN, reset);
   for (int i = 0; i < 16; i++) {
     tpi_send_bit(1);
   }
@@ -67,10 +65,6 @@ unsigned char tpi_get() {
   }
   tpi_clock_pulse();
   parity ^= digitalRead(TPI_DATA_PIN);
-  if (parity) {
-    Serial.println("Parity error!!");
-    Serial.println((int)out);
-  }
   tpi_clock_pulse();
   tpi_clock_pulse();
   pinMode(TPI_DATA_PIN, OUTPUT);
@@ -88,13 +82,11 @@ void enable_nvm() {
   }
 }
 
-void set_no_extra_get_stuff() {
+char set_no_extra_get_stuff() {
   tpi_send(OP_SSTCS | 0x02);
   tpi_send(0x7);
   tpi_send(OP_SLDCS | 0x02);
-  if (tpi_get() != 7) {
-    Serial.println("Failed to set get guud");
-  }
+  return tpi_get() == 0b111;
 }
 
 unsigned char serial_in_addr_to_op_code(unsigned char opcode, unsigned char addr) {
@@ -137,7 +129,7 @@ void set_rstdisbl(char val) {
   wait_nvm_ready();
   if (val) {
     pointer_load(0x3F40);
-    data_write(0, 1); 
+    write_flash(0b11111110, 0xFF);
   }
 }
 
@@ -167,8 +159,19 @@ void write_flash(unsigned char lower, unsigned char upper) {
 
 void start() {
   digitalWrite(TPI_DATA_PIN, 0);
-  tpi_enable();
-  set_no_extra_get_stuff();
+  digitalWrite(PROG_PIN, 1);
+  delay(100);
+  
+  tpi_try_enable(0);
+  char ok = set_no_extra_get_stuff();
+  if (!ok) {
+    tpi_try_enable(1);
+    ok = set_no_extra_get_stuff();
+    if (!ok) {
+      Serial.print("Failed to init tpi");
+      return;
+    }
+  }
   enable_nvm();
   erase_chip();
   pointer_load(0x4000);
@@ -177,6 +180,11 @@ void start() {
 void finish() {
   tpi_send(OP_SSTCS | 0x0);
   tpi_send(0);
+  delay(100);
+  digitalWrite(PROG_PIN, 0);
+  delay(100);
+  digitalWrite(PROG_PIN, 1);
+  delay(100);
   digitalWrite(PROG_PIN, 0);
 }
 
