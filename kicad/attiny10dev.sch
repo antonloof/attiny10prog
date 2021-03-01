@@ -13,17 +13,17 @@ Comment2 ""
 Comment3 ""
 Comment4 ""
 $EndDescr
-Text Label 9150 3400 2    50   ~ 0
-tpi_clk
 Text Label 9150 3000 2    50   ~ 0
+tpi_clk
+Text Label 9150 3400 2    50   ~ 0
 tpi_data
-Text Label 9750 3100 0    50   ~ 0
-pb0
 Text Label 9750 3500 0    50   ~ 0
+pb0
+Text Label 9750 3100 0    50   ~ 0
 pb1
-Text Label 9150 3600 2    50   ~ 0
-io1
 Text Label 9150 3200 2    50   ~ 0
+io1
+Text Label 9150 3600 2    50   ~ 0
 io0
 $Comp
 L random_things:m4-12h K1
@@ -785,11 +785,11 @@ Text Label 4750 4850 0    50   ~ 0
 hard_reset
 Text Label 4750 4950 0    50   ~ 0
 reset_low
-Text Label 4750 5050 0    50   ~ 0
-tpi_data
 Text Label 4750 5150 0    50   ~ 0
-tpi_clk
+tpi_data
 Text Label 4750 5250 0    50   ~ 0
+tpi_clk
+Text Label 4750 5050 0    50   ~ 0
 prog
 Text Label 4750 2550 0    50   ~ 0
 prog_sck
