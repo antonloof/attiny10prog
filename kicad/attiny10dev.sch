@@ -1252,4 +1252,78 @@ Wire Wire Line
 	6650 3450 6350 3450
 Connection ~ 6650 3450
 NoConn ~ 2600 5150
+$Comp
+L Connector:TestPoint TP1
+U 1 1 603EA418
+P 11200 4850
+F 0 "TP1" V 11154 5038 50  0000 L CNN
+F 1 "TestPoint" V 11245 5038 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 11400 4850 50  0001 C CNN
+F 3 "~" H 11400 4850 50  0001 C CNN
+	1    11200 4850
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP2
+U 1 1 603F4857
+P 11200 5050
+F 0 "TP2" V 11154 5238 50  0000 L CNN
+F 1 "TestPoint" V 11245 5238 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 11400 5050 50  0001 C CNN
+F 3 "~" H 11400 5050 50  0001 C CNN
+	1    11200 5050
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP3
+U 1 1 603F5D45
+P 11200 5250
+F 0 "TP3" V 11154 5438 50  0000 L CNN
+F 1 "TestPoint" V 11245 5438 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 11400 5250 50  0001 C CNN
+F 3 "~" H 11400 5250 50  0001 C CNN
+	1    11200 5250
+	0    1    1    0   
+$EndComp
+$Comp
+L Connector:TestPoint TP4
+U 1 1 603F5D4B
+P 11200 5450
+F 0 "TP4" V 11154 5638 50  0000 L CNN
+F 1 "TestPoint" V 11245 5638 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 11400 5450 50  0001 C CNN
+F 3 "~" H 11400 5450 50  0001 C CNN
+	1    11200 5450
+	0    1    1    0   
+$EndComp
+$Comp
+L power:+12V #PWR0103
+U 1 1 603F7ACB
+P 11200 4850
+F 0 "#PWR0103" H 11200 4700 50  0001 C CNN
+F 1 "+12V" H 11215 5023 50  0000 C CNN
+F 2 "" H 11200 4850 50  0001 C CNN
+F 3 "" H 11200 4850 50  0001 C CNN
+	1    11200 4850
+	1    0    0    -1  
+$EndComp
+$Comp
+L Connector:TestPoint TP5
+U 1 1 603FD2FA
+P 11200 5650
+F 0 "TP5" V 11154 5838 50  0000 L CNN
+F 1 "TestPoint" V 11245 5838 50  0000 L CNN
+F 2 "TestPoint:TestPoint_THTPad_D1.0mm_Drill0.5mm" H 11400 5650 50  0001 C CNN
+F 3 "~" H 11400 5650 50  0001 C CNN
+	1    11200 5650
+	0    1    1    0   
+$EndComp
+Text Label 11200 5050 2    50   ~ 0
+pb0
+Text Label 11200 5250 2    50   ~ 0
+pb1
+Text Label 11200 5450 2    50   ~ 0
+io2
+Text Label 11200 5650 2    50   ~ 0
+pb3
 $EndSCHEMATC
