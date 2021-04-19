@@ -26,7 +26,7 @@ io1
 Text Label 9150 3600 2    50   ~ 0
 io0
 $Comp
-L random_things:m4-12h K1
+L attiny10dev-rescue:m4-12h-random_things K1
 U 1 1 5F40FC98
 P 9450 3500
 F 0 "K1" V 8683 3500 50  0000 C CNN
@@ -175,7 +175,7 @@ lower_relay
 Text Label 9750 3900 0    50   ~ 0
 lower_relay
 $Comp
-L random_things:m4-12h K2
+L attiny10dev-rescue:m4-12h-random_things K2
 U 1 1 5F422885
 P 9450 1900
 F 0 "K2" V 8683 1900 50  0000 C CNN
@@ -1002,8 +1002,6 @@ F 3 "~" H 8600 5250 50  0001 C CNN
 	1    8600 5250
 	0    1    1    0   
 $EndComp
-Wire Wire Line
-	8450 5650 8800 5650
 $Comp
 L power:+5V #PWR037
 U 1 1 605E1791
@@ -1016,7 +1014,7 @@ F 3 "" H 8450 4600 50  0001 C CNN
 	1    0    0    -1  
 $EndComp
 Wire Wire Line
-	8450 4900 8450 5150
+	8450 4900 8450 4950
 $Comp
 L Device:R R7
 U 1 1 605DE320
@@ -1087,11 +1085,8 @@ F 3 "~" H 8800 6000 50  0001 C CNN
 	1    8800 6000
 	1    0    0    -1  
 $EndComp
-Connection ~ 8800 5650
 Wire Wire Line
 	8800 5650 8800 5850
-Wire Wire Line
-	8800 5650 8800 4900
 Wire Wire Line
 	7500 5550 7650 5550
 Wire Wire Line
@@ -1326,4 +1321,17 @@ Text Label 11200 5450 2    50   ~ 0
 io2
 Text Label 11200 5650 2    50   ~ 0
 pb3
+Connection ~ 8800 5650
+Wire Wire Line
+	8450 5650 8800 5650
+Wire Wire Line
+	8800 5650 8800 4950
+Wire Wire Line
+	8450 4950 8800 4950
+Connection ~ 8450 4950
+Wire Wire Line
+	8450 4950 8450 5150
+Connection ~ 8800 4950
+Wire Wire Line
+	8800 4950 8800 4900
 $EndSCHEMATC
