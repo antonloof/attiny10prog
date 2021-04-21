@@ -1,7 +1,8 @@
-#define RST_PIN 13
-#define PROG_PIN 12
-#define TPI_CLK_PIN 11
-#define TPI_DATA_PIN 10
+#define RST_PIN A5
+#define PROG_PIN A3
+#define TPI_CLK_PIN A1
+#define TPI_DATA_PIN A2
+#define RST_LOW_PIN A4
 
 #define OP_SKEY    0b11100000
 #define OP_SLDCS   0b10000000
